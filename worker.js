@@ -733,7 +733,7 @@
         stroke: var(--success-color);
         stroke-miterlimit: 10;
         box-shadow: 0 0 20px var(--success-color);
-        animation: fill 0.1s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+        animation: fill 0.2s ease-in-out 0.1s forwards, scale 0.2s ease-in-out 0.1s both;
       }
   
       .checkmark__circle {
