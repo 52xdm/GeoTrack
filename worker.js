@@ -733,7 +733,7 @@
         stroke: var(--success-color);
         stroke-miterlimit: 10;
         box-shadow: 0 0 20px var(--success-color);
-        animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+        animation: fill 0.1s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
       }
   
       .checkmark__circle {
@@ -743,14 +743,14 @@
         stroke-miterlimit: 10;
         stroke: var(--success-color);
         fill: none;
-        animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+        animation: stroke 0.2s cubic-bezier(0.65, 0, 0.45, 1) forwards;
       }
   
       .checkmark__check {
         transform-origin: 50% 50%;
         stroke-dasharray: 48;
         stroke-dashoffset: 48;
-        animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+        animation: stroke 0.1s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
       }
   
       @keyframes stroke {
@@ -1149,7 +1149,7 @@
             setTimeout(() => {
               successAnimation.style.display = 'none';
               resolve();
-            }, 1500);
+            }, 500);
           });
         }
         
