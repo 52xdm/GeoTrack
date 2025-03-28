@@ -1207,13 +1207,22 @@
         
         function updateMap(lat, lng) {
           const mapFrame = document.getElementById('mapFrame');
-          
-          // 转换坐标系（WGS-84 转 GCJ-02）
-          const { lat: gcjLat, lng: gcjLng } = wgs84ToGcj02(parseFloat(lng), parseFloat(lat));
-          
-          // 使用百度地图API
-          const ak = 'nSxiPohfziUaCuONe4ViUP2N'; // 百度地图API密钥，请替换为您自己的密钥
-          mapFrame.src = \`https://api.map.baidu.com/marker?location=\${gcjLat},\${gcjLng}&title=IP位置&content=IP位置&output=html&coord_type=gcj02&zoom=13&ak=\${ak}\`;
+          const ak = '';
+          const googleMapUrl = \`https://www.google.com/maps/embed/v1/place?key=AIzaSyAN4FpvoTeToxAafc_OGlufckos2clD7_k&q=\${lat},\${lng}&zoom=13\`;
+          const baiduMapUrl= \`https://api.map.baidu.com/marker?location=\${lat},\${lng}&title=IP位置&content=IP位置&output=html&coord_type=gcj02&zoom=13&ak=\${ak}\`;
+  
+          const testImg = new Image();
+          testImg.src = 'https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2_hdpi.png'; // Google Maps 静态资源
+      
+          testImg.onload = function () {
+              console.log('Google Maps 可访问');
+              mapFrame.src = googleMapUrl;
+          };
+  
+          testImg.onerror = function () {
+              console.warn('Google Maps 无法访问，切换到百度地图');
+              mapFrame.src = baiduMapUrl;
+          };
         }
         
         function copyResults() {
